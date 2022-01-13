@@ -3,13 +3,15 @@ package adapter
 import "testing"
 
 func TestAdapterInherit(t *testing.T) {
-	p := PrinterBanner{Banner{"hello"}}
+	var p Print // p 为接口类型
+	p = PrinterBanner{Banner{"hello"}}
 	p.PrintStrong()
 	p.PrintWeak()
 }
 
 func TestAdapterTransfer(t *testing.T) {
-	p := PPrinterBanner{b: Banner{"hello"}}
+	var p PPrint // p 为接口类型
+	p = PPrinterBanner{b: Banner{"hello"}}
 	p.PrintStrong()
 	p.PrintWeak()
 }
