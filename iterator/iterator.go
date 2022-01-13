@@ -50,10 +50,7 @@ type BookShelfIterator struct {
 }
 
 func (b *BookShelfIterator) hasNext() bool {
-	if b.index < b.bookShelf.getLength() {
-		return true
-	}
-	return false
+	return b.index < b.bookShelf.getLength()
 }
 
 func (b *BookShelfIterator) next() interface{} {
